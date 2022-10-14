@@ -1,28 +1,29 @@
+# frozen_string_literal: true
+
 def prime(num)
-    is_prime = true
+  is_prime = true
 
-    if num>1
+  if num > 1
 
-        for item in 2...num
-            if num%item == 0
-                is_prime = false
-                break
-            else
-                next    
-            end
-        end
-
-        if is_prime
-            return "this is prime number"
-        else
-            return "not prime" 
-        end  
-
-    else
-        return "not prime"    
+    (2...num).each do |item|
+      if (num % item).zero?
+        is_prime = false
+        break
+      else
+        next
+      end
     end
-  
+
+    if is_prime
+      'this is prime number'
+    else
+      'not prime'
+    end
+
+  else
+    'not prime'
+  end
 end
-print "Enter the number: "
-num =Integer(gets.chomp)
+print 'Enter the number: '
+num = Integer(gets.chomp)
 puts prime(num)
