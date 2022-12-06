@@ -26,7 +26,7 @@ test { puts 'in the blook' }
 BEGIN {
     puts 'BEGIN code block'
 }
-END {
+at_exit do
   puts 'END code block'
-}
+end
 puts 'main block'
